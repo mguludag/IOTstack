@@ -174,7 +174,7 @@ mainmenu_selection=$(whiptail --title "Main Menu" --menu --notags \
 case $mainmenu_selection in
 #MAINMENU Install docker  ------------------------------------------------------------
 "install")
-	#sudo apt update && sudo apt upgrade -y ;;
+	#sudo dnf update && sudo dnf upgrade -y ;;
 
 	if command_exists docker; then
 		echo "docker already installed"
@@ -188,7 +188,7 @@ case $mainmenu_selection in
 		echo "docker-compose already installed"
 	else
 		echo "Install docker-compose"
-		sudo apt install -y docker-compose
+		sudo dnf install -y docker-compose
 	fi
 
 	if (whiptail --title "Restart Required" --yesno "It is recommended that you restart you device now. Select yes to do so now" 20 78); then
